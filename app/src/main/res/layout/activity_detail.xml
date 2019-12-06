@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGreyish"
+    tools:context="com.don.tokenomy.ui.detail.DetailActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingLeft="-24dp"
+            android:text="Detail"
+            android:textSize="@dimen/text_size_24" />
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_size_16dp"
+        app:cardCornerRadius="6dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/textDetailHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_size_16dp"
+                android:text="BRD/BTC" />
+
+            <TextView
+                style="@style/textDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BR291" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="@dimen/margin_size_8dp"
+                android:layout_marginBottom="@dimen/margin_size_8dp"
+                android:background="@color/colorGrey" />
+
+            <TextView
+                style="@style/textDetailHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_size_16dp"
+                android:text="LAST PRICE" />
+
+            <TextView
+                style="@style/textDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.000006570" />
+
+
+            <TextView
+                style="@style/textDetailHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_size_16dp"
+                android:text="24H CHANGE" />
+
+            <TextView
+                style="@style/textDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+4.6%" />
+
+            <TextView
+                style="@style/textDetailHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_size_16dp"
+                android:text="24H HIGH" />
+
+            <TextView
+                style="@style/textDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.00006711" />
+
+            <TextView
+                style="@style/textDetailHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_size_16dp"
+                android:text="24H LOW" />
+
+            <TextView
+                style="@style/textDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.00006711" />
+
+            <TextView
+                style="@style/textDetailHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_size_16dp"
+                android:text="24H VOLUME" />
+
+            <TextView
+                style="@style/textDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_size_16dp"
+                android:text="101,300 brd" />
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

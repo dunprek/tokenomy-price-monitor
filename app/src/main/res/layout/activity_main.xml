@@ -1,0 +1,191 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorGreyish"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_size_24dp"
+        android:fontFamily="@font/trueno_bd"
+        android:gravity="center"
+        android:text="@string/label_price_monitor"
+        android:textAllCaps="true"
+        android:textColor="@color/colorGreyishBlueDark"
+        android:textSize="@dimen/text_size_24" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_size_8dp"
+        android:gravity="center"
+        android:text="@string/label_top_5_volume"
+        android:textAllCaps="true"
+        android:textColor="@color/colorGrey"
+        android:textSize="@dimen/text_size_20" />
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/chart1"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/margin_size_8dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_marginStart="@dimen/margin_size_16dp"
+            android:layout_marginEnd="@dimen/margin_size_8dp"
+            android:background="@drawable/ic_star_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tvBtc"
+            android:paddingStart="@dimen/margin_size_8dp"
+            android:paddingEnd="@dimen/margin_size_8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_btc" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorAccent" />
+
+        <TextView
+            android:id="@+id/tvEth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/margin_size_8dp"
+            android:paddingEnd="@dimen/margin_size_8dp"
+            android:text="@string/label_eth" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorAccent" />
+
+        <TextView
+            android:id="@+id/tvTen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/margin_size_8dp"
+            android:paddingEnd="@dimen/margin_size_8dp"
+            android:text="@string/label_ten" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorAccent" />
+
+        <TextView
+            android:id="@+id/tvUsdt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="@dimen/margin_size_8dp"
+            android:paddingStart="@dimen/margin_size_8dp"
+            android:text="@string/label_usdt" />
+
+    </LinearLayout>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_size_8dp"
+        tools:ignore="Autofill,LabelFor,TextFields" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="6dp"
+        app:cardUseCompatPadding="true"
+        android:layout_margin="@dimen/margin_size_16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_size_6dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_size_8dp"
+                android:gravity="center"
+                android:padding="@dimen/margin_size_8dp"
+                android:orientation="horizontal"
+                tools:ignore="UnusedAttribute">
+
+                <ImageView
+                    android:layout_width="@dimen/margin_size_24dp"
+                    android:layout_height="@dimen/margin_size_24dp"
+                    android:background="@drawable/ic_star_default"
+                    android:visibility="invisible"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    style="@style/textMainHeader"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/label_markets"
+                    android:textAllCaps="true" />
+
+                <TextView
+                    style="@style/textMainHeader"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/label_last_price"
+                    android:textAllCaps="true" />
+
+
+                <TextView
+                    style="@style/textMainHeader"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/label_24h_volume"
+                    android:textAllCaps="true" />
+
+                <TextView
+                    style="@style/textMainHeader"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/label_change"
+                    android:textAllCaps="true" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvMovieList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_size_16dp"
+                tools:listitem="@layout/item_list_token" />
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <include
+        layout="@layout/progress_dialog"
+        android:visibility="gone" />
+</LinearLayout>

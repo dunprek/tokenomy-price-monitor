@@ -1,0 +1,60 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/trueno_semi_bold</item>
+    </style>
+
+    <style name="AppNoBar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/trueno_semi_bold</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+    </style>
+
+
+    <style name="textMainLayout" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/text_size_12</item>
+        <item name="android:textColor">@color/colorGrey</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">@font/trueno_semi_bold</item>
+    </style>
+
+    <style name="textMainHeader" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/text_size_10</item>
+        <item name="android:textColor">@color/colorGrey</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:lineSpacingExtra">@dimen/text_size_20</item>
+        <item name="android:fontFamily">@font/trueno_light</item>
+    </style>
+    <style name="textItemList" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/text_size_10</item>
+        <item name="android:textColor">@color/colorGreyishBlueLight</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">@font/trueno_light</item>
+    </style>
+
+    <style name="textDetailHeader" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textColor">@color/colorGrey</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">@font/trueno_light</item>
+    </style>
+
+    <style name="textDetail" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/text_size_20</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">@font/trueno_light</item>
+    </style>
+</resources>
