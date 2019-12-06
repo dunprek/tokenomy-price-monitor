@@ -658,6 +658,7 @@ class RemoteRepository {
                                 Log.e("ERROR", testOne.toString())
                                 Log.e("ERROR", testTwo.toString())
                                 Log.e("ERROR", testThree.toString())
+                                Log.e("ERROR", listMdlMarket.size.toString())
 
                             }
                             progress.visibility = View.GONE

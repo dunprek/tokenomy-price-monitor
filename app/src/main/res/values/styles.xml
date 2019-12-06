@@ -55,6 +55,6 @@
         <item name="android:textSize">@dimen/text_size_20</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textAllCaps">true</item>
-        <item name="android:fontFamily">@font/trueno_light</item>
+        <item name="android:fontFamily">@font/orator_std</item>
     </style>
 </resources>

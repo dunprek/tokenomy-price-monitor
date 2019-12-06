@@ -12,6 +12,7 @@ import com.don.tokenomy.TokenomyApp
 import com.don.tokenomy.api.TokenomyService
 import com.don.tokenomy.data.remote.MdlMarket
 import kotlinx.android.synthetic.main.activity_main.*
+import okhttp3.internal.notify
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -23,6 +24,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     lateinit var mAdapter: MainAdapter
     lateinit var progressDialog: LinearLayout
     lateinit var mainViewModel: MainViewModel
+
+    var selectedCategory = "BTC"
+
+    val listSelected = arrayListOf<MdlMarket>()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,7 +56,25 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View) {
-        if(v.id ==R.id.tvBtc){
+        if (v.id == R.id.tvBtc) {
+            selectedCategory = "BTC"
+            mAdapter.setData(listSelected,selectedCategory)
+        }
+
+        if (v.id == R.id.tvEth) {
+            selectedCategory = "ETH"
+            mAdapter.setData(listSelected,selectedCategory)
+        }
+
+        if (v.id == R.id.tvUsdt) {
+            selectedCategory = "USDT"
+            mAdapter.setData(listSelected,selectedCategory)
+
+        }
+
+        if (v.id == R.id.tvTen) {
+            selectedCategory = "TEN"
+            mAdapter.setData(listSelected,selectedCategory)
 
 
         }
@@ -64,8 +87,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         mainViewModel.setAttributes(tokenomyService, progressDialog)
         mainViewModel.getSummary().observe(this, getSummary)
         mainViewModel.getErrors().observe(this, getError)
-
-
     }
 
     private fun setupAdapter() {
@@ -77,12 +98,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    private val getSummary = Observer<List<MdlMarket>> { list ->
+    private val getSummary = Observer<List<MdlMarket>> {
+        list ->
         if (list != null) {
             Timber.d(list.toString())
-            mAdapter.setData(list)
+            listSelected.addAll(list)
+            mAdapter.setData(listSelected,selectedCategory)
         }
     }
+
 
     private val getError = Observer<String> { list ->
         if (list != null) {
