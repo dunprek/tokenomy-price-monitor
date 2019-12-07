@@ -14,7 +14,7 @@ Consuming API from <a href ="https://exchange.tokenomy.com/api/summaries" target
 <p>
 <ul>
   <li> Displaying market using MVVM design pattern</li>
-  <li> using jetpack pro LiveData, ViewModel, Retrofit, Dagger</li> 
+  <li> using jetpack pro LiveData, ViewModel, Retrofit, Dagger based on Kotlin</li> 
   <li> Using cpp to secure secret key from apk that been reversed engineered</li> 
 </ul>
 <p>
