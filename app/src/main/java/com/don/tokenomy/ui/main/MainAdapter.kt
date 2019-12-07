@@ -13,22 +13,20 @@ import com.don.tokenomy.R
 import com.don.tokenomy.data.remote.MdlMarket
 import com.don.tokenomy.ui.detail.DetailActivity
 
+
 /**
  * Created by gideon on 06,December,2019
  * dunprek@gmail.com
  * Jakarta - Indonesia
  */
 
-class MainAdapter(val activity: Activity) :
-        RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class MainAdapter(val activity: Activity) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private val list = ArrayList<MdlMarket>()
+
+    private var list = ArrayList<MdlMarket>()
+
 
     fun setData(items: List<MdlMarket>, category: String) {
-        list.clear()
-        list.addAll(items)
-        notifyDataSetChanged()
-
         list.clear()
         for (i in 0 until items.count()) {
             if (category.equals(items[i].category)) {
@@ -49,6 +47,7 @@ class MainAdapter(val activity: Activity) :
         notifyDataSetChanged()
     }
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val inflater = LayoutInflater.from(activity)
         return ViewHolder(inflater.inflate(R.layout.item_list_token, parent, false))
@@ -67,6 +66,7 @@ class MainAdapter(val activity: Activity) :
     }
 
     override fun getItemCount() = list.size
+
 
     class ViewHolder internal constructor(itemView: View) :
             RecyclerView.ViewHolder(itemView) {
@@ -119,4 +119,12 @@ class MainAdapter(val activity: Activity) :
 
         }
     }
+
+
+    fun filterList(filterdNames: ArrayList<MdlMarket>) {
+        this.list = filterdNames
+        notifyDataSetChanged()
+    }
+
+
 }

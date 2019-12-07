@@ -24,6 +24,8 @@
     <string name="label_24h_high">24H HIGH</string>
     <string name="label_24h_low">24H LOW</string>
     <string name="label_24h_volume_detail">24H VOLUME</string>
+    <string name="search_hint">Search Here</string>
+    <string name="label_search_market">SEARCH MARKET</string>
 
 
 </resources>

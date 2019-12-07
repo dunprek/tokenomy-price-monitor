@@ -34,6 +34,21 @@
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/margin_size_8dp" />
 
+    <EditText
+        android:id="@+id/etSearch"
+        android:layout_marginStart="@dimen/margin_size_18dp"
+        android:layout_marginEnd="@dimen/margin_size_18dp"
+        android:layout_marginBottom="@dimen/margin_size_16dp"
+        android:background="@drawable/rectangle_grey"
+        android:layout_width="match_parent"
+        android:hint="@string/label_search_market"
+        android:textSize="@dimen/text_size_12"
+        android:textCursorDrawable="@null"
+        android:paddingStart="@dimen/margin_size_18dp"
+        android:paddingEnd="@dimen/margin_size_18dp"
+        android:layout_height="@dimen/margin_size_30dp"
+        tools:ignore="Autofill,TextFields" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
