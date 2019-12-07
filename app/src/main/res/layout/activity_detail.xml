@@ -20,8 +20,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:paddingLeft="-24dp"
-            android:text="Detail"
+            android:paddingStart="-48dp"
+            android:paddingEnd="0dp"
+            android:text="@string/label_detail"
             android:textSize="@dimen/text_size_24" />
 
 
@@ -47,14 +48,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_size_16dp"
-                android:text="BRD/BTC" />
+                tools:text="BRD/BTC" />
 
             <TextView
                 android:id="@+id/tvMarketName"
                 style="@style/textDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="BR291" />
+                tools:text="BR291" />
 
             <View
                 android:layout_width="match_parent"
@@ -68,7 +69,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_size_16dp"
-                android:text="LAST PRICE" />
+                android:text="@string/label_last_price_detail" />
 
             <TextView
                 android:id="@+id/tvLastPrice"
@@ -83,7 +84,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_size_16dp"
-                android:text="24H CHANGE" />
+                android:text="@string/label_24h_change" />
 
             <TextView
                 android:id="@+id/tvTwoFour"
@@ -97,7 +98,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_size_16dp"
-                android:text="24H HIGH" />
+                android:text="@string/label_24h_high" />
 
             <TextView
                 android:id="@+id/tvTwoFourHigh"
@@ -111,7 +112,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_size_16dp"
-                android:text="24H LOW" />
+                android:text="@string/label_24h_low" />
 
             <TextView
                 android:id="@+id/tvTwoFourLow"
@@ -125,7 +126,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_size_16dp"
-                android:text="24H VOLUME" />
+                android:text="@string/label_24h_volume_detail" />
 
             <TextView
                 android:id="@+id/tvVolume"

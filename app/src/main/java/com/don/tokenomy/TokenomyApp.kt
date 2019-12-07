@@ -35,7 +35,7 @@ class TokenomyApp : Application() {
 
     private fun createAppComponent() {
         appComponent = DaggerTokenomyComponent.builder()
-            .tokenomyModule(TokenomyModule())
-            .build()
+                .tokenomyModule(TokenomyModule())
+                .build()
     }
 }

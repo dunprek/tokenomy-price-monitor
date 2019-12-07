@@ -1,7 +1,6 @@
 package com.don.tokenomy.ui.main
 
 import android.app.Activity
-import android.content.ClipData
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -25,7 +24,6 @@ class MainAdapter(val activity: Activity) :
 
     private val list = ArrayList<MdlMarket>()
 
-
     fun setData(items: List<MdlMarket>, category: String) {
         list.clear()
         list.addAll(items)
@@ -44,12 +42,12 @@ class MainAdapter(val activity: Activity) :
                         items[i].lastPrice,
                         items[i].buy,
                         items[i].sell,
-                        items[i].percentage))
+                        items[i].percentage,
+                        items[i].twoFour))
             }
         }
         notifyDataSetChanged()
     }
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val inflater = LayoutInflater.from(activity)
@@ -68,7 +66,6 @@ class MainAdapter(val activity: Activity) :
         }
     }
 
-
     override fun getItemCount() = list.size
 
     class ViewHolder internal constructor(itemView: View) :
@@ -85,12 +82,17 @@ class MainAdapter(val activity: Activity) :
         fun bind(model: MdlMarket) {
             tvMarket.text = model.market
             tvLastPrice.text = model.lastPrice
-            tvPercent.text = model.percentage.toString()
+            tvTwoFour.text = model.twoFour + " " + model.category
+            tvPercent.text = model.percentage.toString() + "%"
+
 
             if (model.percentage <= -0f) {
 //                ivPercent.background = itemView.context.getDrawable(R.drawable.ic_down_arrow_red)
                 ivPercentDown.visibility = View.VISIBLE
                 ivPercentUp.visibility = View.GONE
+
+                tvPercent.setTextColor(itemView.context.resources.getColor(R.color.colorRed))
+
             }
 
             if (model.percentage == 0f) {
@@ -103,6 +105,8 @@ class MainAdapter(val activity: Activity) :
             if (model.percentage > 0f) {
                 ivPercentDown.visibility = View.GONE
                 ivPercentUp.visibility = View.VISIBLE
+                tvPercent.setTextColor(itemView.context.resources.getColor(R.color.colorGreen))
+
             }
 
 
@@ -112,8 +116,7 @@ class MainAdapter(val activity: Activity) :
                 itemView.context.startActivity(intent)
             }
 
+
         }
     }
-
-
 }

@@ -2,6 +2,7 @@ package com.don.tokenomy.di
 
 import com.don.tokenomy.BuildConfig
 import com.don.tokenomy.api.TokenomyService
+import com.don.tokenomy.utils.JniHelper
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
@@ -18,35 +19,32 @@ import retrofit2.converter.gson.GsonConverterFactory
  */
 @Module
 class TokenomyModule {
-    companion object{
-        val BASE_URL = "https://exchange.tokenomy.com/"
-    }
     @Provides
     internal fun provideLoggingCapableHttpClient(): OkHttpClient {
         val logging = HttpLoggingInterceptor()
 
         logging.level =
-            if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.NONE
+                if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.NONE
 
         return OkHttpClient.Builder()
-            .addInterceptor(logging)
-            .build()
+                .addInterceptor(logging)
+                .build()
     }
 
     @Provides
     internal fun gson(): Gson {
         return GsonBuilder()
-            .serializeNulls()
-            .create()
+                .serializeNulls()
+                .create()
     }
 
     @Provides
     internal fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create(gson()))
-            .client(okHttpClient)
-            .build()
+                .baseUrl(JniHelper.baseUrl())
+                .addConverterFactory(GsonConverterFactory.create(gson()))
+                .client(okHttpClient)
+                .build()
     }
 
     @Provides

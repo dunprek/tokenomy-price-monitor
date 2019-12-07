@@ -5,7 +5,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.don.tokenomy.api.TokenomyService
 import com.don.tokenomy.data.remote.MdlMarket
-import com.don.tokenomy.data.remote.MdlTokenomy
 import com.don.tokenomy.data.remote.RemoteRepository
 
 /**
@@ -16,7 +15,7 @@ import com.don.tokenomy.data.remote.RemoteRepository
 class TokenomyRepository(private val remoteRepository: RemoteRepository) : TokenomyDataSource {
     override fun getSummary(tokenomyService: TokenomyService, progress: LinearLayout): LiveData<List<MdlMarket>> {
         val summaryResult = MutableLiveData<List<MdlMarket>>()
-        remoteRepository.getSummary(object :RemoteRepository.LoadSummaryCallback{
+        remoteRepository.getSummary(object : RemoteRepository.LoadSummaryCallback {
             override fun onSummaryReceived(market: List<MdlMarket>) {
                 summaryResult.postValue(market)
             }
@@ -26,7 +25,7 @@ class TokenomyRepository(private val remoteRepository: RemoteRepository) : Token
                 errorResponse.postValue(response)
             }
 
-        },tokenomyService,progress)
+        }, tokenomyService, progress)
 
         return summaryResult
     }
@@ -49,9 +48,6 @@ class TokenomyRepository(private val remoteRepository: RemoteRepository) : Token
             return INSTANCE
         }
     }
-
-
-
 
 
     override fun getError(): LiveData<String> {

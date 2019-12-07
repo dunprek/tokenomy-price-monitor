@@ -6,8 +6,8 @@ import androidx.lifecycle.ViewModel
 import com.don.tokenomy.api.TokenomyService
 import com.don.tokenomy.data.TokenomyRepository
 import com.don.tokenomy.data.remote.MdlMarket
-import com.don.tokenomy.data.remote.MdlTokenomy
 import com.don.tokenomy.data.remote.RemoteRepository
+
 /**
  * Created by gideon on 06,December,2019
  * dunprek@gmail.com

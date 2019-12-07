@@ -35,6 +35,7 @@
         <item name="android:lineSpacingExtra">@dimen/text_size_20</item>
         <item name="android:fontFamily">@font/trueno_light</item>
     </style>
+
     <style name="textItemList" parent="TextAppearance.AppCompat">
         <item name="android:textSize">@dimen/text_size_10</item>
         <item name="android:textColor">@color/colorGreyishBlueLight</item>

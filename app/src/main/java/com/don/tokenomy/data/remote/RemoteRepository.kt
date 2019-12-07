@@ -4,13 +4,6 @@ import android.util.Log
 import android.view.View
 import android.widget.LinearLayout
 import com.don.tokenomy.api.TokenomyService
-import com.google.gson.Gson
-import com.google.gson.JsonObject
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import timber.log.Timber
-
 import com.don.tokenomy.utils.ConstantsFile.Companion.bchabc_btc
 import com.don.tokenomy.utils.ConstantsFile.Companion.bchsv_btc
 import com.don.tokenomy.utils.ConstantsFile.Companion.btc_idk
@@ -47,8 +40,12 @@ import com.don.tokenomy.utils.ConstantsFile.Companion.vex_ten
 import com.don.tokenomy.utils.ConstantsFile.Companion.xlm_btc
 import com.don.tokenomy.utils.ConstantsFile.Companion.xmr_btc
 import com.don.tokenomy.utils.ConstantsFile.Companion.zec_btc
-import java.math.RoundingMode
-import java.text.DecimalFormat
+import com.google.gson.Gson
+import com.google.gson.JsonObject
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import timber.log.Timber
 
 /**
  * Created by gideon on 06,December,2019
@@ -108,7 +105,6 @@ class RemoteRepository {
 
 
                                 val percentageTrxBtc = countPercentage(mdlTokenomy.prices24h.trxbtc.toFloat(), mdlTokenomy.prices7d.trxbtc.toFloat())
-
 
 
                                 val percentageLrcBtc = countPercentage(mdlTokenomy.prices24h.lrcbtc.toFloat(), mdlTokenomy.prices7d.lrcbtc.toFloat())
@@ -210,7 +206,6 @@ class RemoteRepository {
                                 val percentageSccIdk = countPercentage(mdlTokenomy.prices24h.sccidk.toFloat(), mdlTokenomy.prices7d.sccidk.toFloat())
 
 
-
                                 val listMdlMarket = arrayListOf<MdlMarket>()
 
                                 listMdlMarket.add(MdlMarket(
@@ -223,7 +218,8 @@ class RemoteRepository {
                                         mdlTokenomy.tickers.tenBtc.last,
                                         mdlTokenomy.tickers.tenBtc.buy,
                                         mdlTokenomy.tickers.tenBtc.sell,
-                                        percentageTenBtc))
+                                        percentageTenBtc,
+                                        mdlTokenomy.prices24h.tenbtc))
                                 listMdlMarket.add(MdlMarket(
                                         eth_btc,
                                         "BTC",
@@ -234,7 +230,8 @@ class RemoteRepository {
                                         mdlTokenomy.tickers.ethBtc.last,
                                         mdlTokenomy.tickers.ethBtc.buy,
                                         mdlTokenomy.tickers.ethBtc.sell,
-                                        percentageEthBtc))
+                                        percentageEthBtc,
+                                        mdlTokenomy.prices24h.ethbtc))
                                 listMdlMarket.add(MdlMarket(
                                         trx_btc,
                                         "BTC",
@@ -245,7 +242,9 @@ class RemoteRepository {
                                         mdlTokenomy.tickers.trxBtc.last,
                                         mdlTokenomy.tickers.trxBtc.buy,
                                         mdlTokenomy.tickers.trxBtc.sell,
-                                        percentageTrxBtc))
+                                        percentageTrxBtc,
+                                        mdlTokenomy.prices24h.trxbtc))
+
                                 listMdlMarket.add(MdlMarket(
                                         lrc_btc,
                                         "BTC",
@@ -256,7 +255,9 @@ class RemoteRepository {
                                         mdlTokenomy.tickers.lrcBtc.last,
                                         mdlTokenomy.tickers.lrcBtc.buy,
                                         mdlTokenomy.tickers.lrcBtc.sell,
-                                        percentageLrcBtc))
+                                        percentageLrcBtc,
+                                        mdlTokenomy.prices24h.lrcbtc))
+
                                 listMdlMarket.add(MdlMarket(
                                         vex_btc,
                                         "BTC",
@@ -267,7 +268,9 @@ class RemoteRepository {
                                         mdlTokenomy.tickers.vexBtc.last,
                                         mdlTokenomy.tickers.vexBtc.buy,
                                         mdlTokenomy.tickers.vexBtc.sell,
-                                        percentageVexBtc))
+                                        percentageVexBtc,
+                                        mdlTokenomy.prices24h.vexbtc))
+
                                 listMdlMarket.add(MdlMarket(
                                         ltc_btc,
                                         "BTC",
@@ -278,7 +281,9 @@ class RemoteRepository {
                                         mdlTokenomy.tickers.ltcBtc.last,
                                         mdlTokenomy.tickers.ltcBtc.buy,
                                         mdlTokenomy.tickers.ltcBtc.sell,
-                                        percentageLtcBtc))
+                                        percentageLtcBtc,
+                                        mdlTokenomy.prices24h.ltcbtc))
+
                                 listMdlMarket.add(MdlMarket(
                                         bchabc_btc,
                                         "BTC",
@@ -289,7 +294,9 @@ class RemoteRepository {
                                         mdlTokenomy.tickers.bchabcBtc.last,
                                         mdlTokenomy.tickers.bchabcBtc.buy,
                                         mdlTokenomy.tickers.bchabcBtc.sell,
-                                        percentageBchabcBtc))
+                                        percentageBchabcBtc,
+                                        mdlTokenomy.prices24h.bchabcbtc))
+
 
                                 listMdlMarket.add(MdlMarket(
                                         bchsv_btc,
@@ -301,7 +308,9 @@ class RemoteRepository {
                                         mdlTokenomy.tickers.bchsvBtc.last,
                                         mdlTokenomy.tickers.bchsvBtc.convertedBuy,
                                         mdlTokenomy.tickers.bchsvBtc.convertedSell,
-                                        percentageBchsvBtc))
+                                        percentageBchsvBtc,
+                                        mdlTokenomy.prices24h.bchsvbtc))
+
 
                                 listMdlMarket.add(MdlMarket(
                                         etc_btc,
@@ -313,7 +322,9 @@ class RemoteRepository {
                                         mdlTokenomy.tickers.etcBtc.last,
                                         mdlTokenomy.tickers.etcBtc.buy,
                                         mdlTokenomy.tickers.etcBtc.sell,
-                                        percentageEtcBtc))
+                                        percentageEtcBtc,
+                                        mdlTokenomy.prices24h.etcbtc))
+
 
                                 listMdlMarket.add(MdlMarket(
                                         ont_btc,
@@ -325,7 +336,9 @@ class RemoteRepository {
                                         mdlTokenomy.tickers.ontBtc.last,
                                         mdlTokenomy.tickers.ontBtc.buy,
                                         mdlTokenomy.tickers.ontBtc.sell,
-                                        percentageOntBtc))
+                                        percentageOntBtc,
+                                        mdlTokenomy.prices24h.ontbtc))
+
 
                                 listMdlMarket.add(MdlMarket(
                                         six_btc,
@@ -337,7 +350,9 @@ class RemoteRepository {
                                         mdlTokenomy.tickers.sixBtc.last,
                                         mdlTokenomy.tickers.sixBtc.buy,
                                         mdlTokenomy.tickers.sixBtc.sell,
-                                        percentageSixBtc))
+                                        percentageSixBtc,
+                                        mdlTokenomy.prices24h.sixbtc))
+
 
                                 listMdlMarket.add(MdlMarket(
                                         xlm_btc,
@@ -349,7 +364,9 @@ class RemoteRepository {
                                         mdlTokenomy.tickers.xlmBtc.last,
                                         mdlTokenomy.tickers.xlmBtc.buy,
                                         mdlTokenomy.tickers.xlmBtc.sell,
-                                        percentageXlmBtc))
+                                        percentageXlmBtc,
+                                        mdlTokenomy.prices24h.xlmbtc))
+
 
                                 listMdlMarket.add(MdlMarket(
                                         pxg_btc,
@@ -361,7 +378,9 @@ class RemoteRepository {
                                         mdlTokenomy.tickers.pxgBtc.last,
                                         mdlTokenomy.tickers.pxgBtc.buy,
                                         mdlTokenomy.tickers.pxgBtc.sell,
-                                        percentagePxgBtc))
+                                        percentagePxgBtc,
+                                        mdlTokenomy.prices24h.pxgbtc))
+
 
                                 listMdlMarket.add(MdlMarket(
                                         lyfe_btc,
@@ -373,7 +392,9 @@ class RemoteRepository {
                                         mdlTokenomy.tickers.lyfeBtc.last,
                                         mdlTokenomy.tickers.lyfeBtc.buy,
                                         mdlTokenomy.tickers.lyfeBtc.sell,
-                                        percentageLyfeBtc))
+                                        percentageLyfeBtc,
+                                        mdlTokenomy.prices24h.lyfebtc))
+
 
                                 listMdlMarket.add(MdlMarket(
                                         btt_btc,
@@ -385,7 +406,9 @@ class RemoteRepository {
                                         mdlTokenomy.tickers.bttBtc.last,
                                         mdlTokenomy.tickers.bttBtc.convertedBuy,
                                         mdlTokenomy.tickers.bttBtc.convertedSell,
-                                        percentageBttBtc))
+                                        percentageBttBtc,
+                                        mdlTokenomy.prices24h.bttbtc))
+
 
                                 listMdlMarket.add(MdlMarket(
                                         zec_btc,
@@ -397,7 +420,9 @@ class RemoteRepository {
                                         mdlTokenomy.tickers.zecBtc.last,
                                         mdlTokenomy.tickers.zecBtc.buy,
                                         mdlTokenomy.tickers.zecBtc.sell,
-                                        percentageZecBtc))
+                                        percentageZecBtc,
+                                        mdlTokenomy.prices24h.zecbtc))
+
 
                                 listMdlMarket.add(MdlMarket(
                                         hnst_btc,
@@ -409,7 +434,9 @@ class RemoteRepository {
                                         mdlTokenomy.tickers.hnstBtc.last,
                                         mdlTokenomy.tickers.hnstBtc.buy,
                                         mdlTokenomy.tickers.hnstBtc.sell,
-                                        percentageHnstBtc))
+                                        percentageHnstBtc,
+                                        mdlTokenomy.prices24h.hnstbtc))
+
 
                                 listMdlMarket.add(MdlMarket(
                                         swipe_btc,
@@ -421,7 +448,9 @@ class RemoteRepository {
                                         mdlTokenomy.tickers.swipeBtc.last,
                                         mdlTokenomy.tickers.swipeBtc.buy,
                                         mdlTokenomy.tickers.swipeBtc.sell,
-                                        percentageSwipeBtc))
+                                        percentageSwipeBtc,
+                                        mdlTokenomy.prices24h.swipebtc))
+
 
                                 listMdlMarket.add(MdlMarket(
                                         perl_btc,
@@ -433,7 +462,9 @@ class RemoteRepository {
                                         mdlTokenomy.tickers.perlBtc.last,
                                         mdlTokenomy.tickers.perlBtc.convertedBuy,
                                         mdlTokenomy.tickers.perlBtc.convertedSell,
-                                        percentagePerlBtc))
+                                        percentagePerlBtc,
+                                        mdlTokenomy.prices24h.perlbtc))
+
                                 listMdlMarket.add(MdlMarket(
                                         xmr_btc,
                                         "BTC",
@@ -444,7 +475,9 @@ class RemoteRepository {
                                         mdlTokenomy.tickers.xmrBtc.last,
                                         mdlTokenomy.tickers.xmrBtc.convertedBuy,
                                         mdlTokenomy.tickers.xmrBtc.convertedSell,
-                                        percentageXmrBtc))
+                                        percentageXmrBtc,
+                                        mdlTokenomy.prices24h.xmrbtc))
+
 
                                 listMdlMarket.add(MdlMarket(
                                         eos_btc,
@@ -456,7 +489,9 @@ class RemoteRepository {
                                         mdlTokenomy.tickers.eosBtc.last,
                                         mdlTokenomy.tickers.eosBtc.buy,
                                         mdlTokenomy.tickers.eosBtc.sell,
-                                        percentageEosBtc))
+                                        percentageEosBtc,
+                                        mdlTokenomy.prices24h.eosbtc))
+
 
                                 listMdlMarket.add(MdlMarket(
                                         ten_eth,
@@ -468,7 +503,9 @@ class RemoteRepository {
                                         mdlTokenomy.tickers.tenEth.last,
                                         mdlTokenomy.tickers.tenEth.buy,
                                         mdlTokenomy.tickers.tenEth.sell,
-                                        percentageTenEth))
+                                        percentageTenEth,
+                                        mdlTokenomy.prices24h.teneth))
+
 
                                 listMdlMarket.add(MdlMarket(
                                         trx_eth,
@@ -480,7 +517,9 @@ class RemoteRepository {
                                         mdlTokenomy.tickers.trxEth.last,
                                         mdlTokenomy.tickers.trxEth.buy,
                                         mdlTokenomy.tickers.trxEth.sell,
-                                        percentageTrxEth))
+                                        percentageTrxEth,
+                                        mdlTokenomy.prices24h.trxeth))
+
 
                                 listMdlMarket.add(MdlMarket(
                                         hart_eth,
@@ -492,7 +531,9 @@ class RemoteRepository {
                                         mdlTokenomy.tickers.hartEth.last,
                                         mdlTokenomy.tickers.hartEth.buy,
                                         mdlTokenomy.tickers.hartEth.sell,
-                                        percentageHartEth))
+                                        percentageHartEth,
+                                        mdlTokenomy.prices24h.harteth))
+
 
                                 listMdlMarket.add(MdlMarket(
                                         inx_eth,
@@ -504,7 +545,9 @@ class RemoteRepository {
                                         mdlTokenomy.tickers.inxEth.last,
                                         mdlTokenomy.tickers.inxEth.buy,
                                         mdlTokenomy.tickers.inxEth.sell,
-                                        percentageInxEth))
+                                        percentageInxEth,
+                                        mdlTokenomy.prices24h.inxeth))
+
 
                                 listMdlMarket.add(MdlMarket(
                                         vex_ten,
@@ -516,7 +559,9 @@ class RemoteRepository {
                                         mdlTokenomy.tickers.vexTen.last,
                                         mdlTokenomy.tickers.vexTen.buy,
                                         mdlTokenomy.tickers.vexTen.sell,
-                                        percentageVexTen))
+                                        percentageVexTen,
+                                        mdlTokenomy.prices24h.vexten))
+
                                 listMdlMarket.add(MdlMarket(
                                         six_ten,
                                         "TEN",
@@ -527,7 +572,9 @@ class RemoteRepository {
                                         mdlTokenomy.tickers.sixTen.last,
                                         mdlTokenomy.tickers.sixTen.convertedBuy,
                                         mdlTokenomy.tickers.sixTen.convertedSell,
-                                        percentageSixTen))
+                                        percentageSixTen,
+                                        mdlTokenomy.prices24h.sixten))
+
 
                                 listMdlMarket.add(MdlMarket(
                                         ten_usdt,
@@ -539,7 +586,9 @@ class RemoteRepository {
                                         mdlTokenomy.tickers.tenUsdt.last,
                                         mdlTokenomy.tickers.tenUsdt.buy,
                                         mdlTokenomy.tickers.tenUsdt.sell,
-                                        percentageTenUsdt))
+                                        percentageTenUsdt,
+                                        mdlTokenomy.prices24h.tenusdt))
+
 
                                 listMdlMarket.add(MdlMarket(
                                         btc_usdt,
@@ -551,7 +600,9 @@ class RemoteRepository {
                                         mdlTokenomy.tickers.btcUsdt.last,
                                         mdlTokenomy.tickers.btcUsdt.buy,
                                         mdlTokenomy.tickers.btcUsdt.sell,
-                                        percentageBtcUsdt))
+                                        percentageBtcUsdt,
+                                        mdlTokenomy.prices24h.btcusdt))
+
 
                                 listMdlMarket.add(MdlMarket(
                                         eth_usdt,
@@ -563,7 +614,9 @@ class RemoteRepository {
                                         mdlTokenomy.tickers.ethUsdt.last,
                                         mdlTokenomy.tickers.ethUsdt.buy,
                                         mdlTokenomy.tickers.ethUsdt.sell,
-                                        percentageEthUsdt))
+                                        percentageEthUsdt,
+                                        mdlTokenomy.prices24h.ethusdt))
+
 
                                 listMdlMarket.add(MdlMarket(
                                         fgram_usdt,
@@ -575,7 +628,9 @@ class RemoteRepository {
                                         mdlTokenomy.tickers.fgramUsdt.last,
                                         mdlTokenomy.tickers.fgramUsdt.buy,
                                         mdlTokenomy.tickers.fgramUsdt.sell,
-                                        percentageFgramUsdt))
+                                        percentageFgramUsdt,
+                                        mdlTokenomy.prices24h.fgramusdt))
+
 
                                 listMdlMarket.add(MdlMarket(
                                         btc_idk,
@@ -587,7 +642,9 @@ class RemoteRepository {
                                         mdlTokenomy.tickers.btcIdk.last,
                                         mdlTokenomy.tickers.btcIdk.buy,
                                         mdlTokenomy.tickers.btcIdk.sell,
-                                        percentageBtcIdk))
+                                        percentageBtcIdk,
+                                        mdlTokenomy.prices24h.btcidk))
+
 
 
                                 listMdlMarket.add(MdlMarket(
@@ -600,7 +657,9 @@ class RemoteRepository {
                                         mdlTokenomy.tickers.usdtIdk.last,
                                         mdlTokenomy.tickers.usdtIdk.buy,
                                         mdlTokenomy.tickers.usdtIdk.sell,
-                                        percentageUsdtIdk))
+                                        percentageUsdtIdk,
+                                        mdlTokenomy.prices24h.usdtidk))
+
 
                                 listMdlMarket.add(MdlMarket(
                                         perl_idk,
@@ -612,7 +671,9 @@ class RemoteRepository {
                                         mdlTokenomy.tickers.perlIdk.last,
                                         mdlTokenomy.tickers.perlIdk.convertedBuy,
                                         mdlTokenomy.tickers.perlIdk.convertedSell,
-                                        percentagePerlIdk))
+                                        percentagePerlIdk,
+                                        mdlTokenomy.prices24h.perlidk))
+
 
                                 listMdlMarket.add(MdlMarket(
                                         fgram_idk,
@@ -624,7 +685,9 @@ class RemoteRepository {
                                         mdlTokenomy.tickers.fgramIdk.last,
                                         mdlTokenomy.tickers.fgramIdk.buy,
                                         mdlTokenomy.tickers.fgramIdk.sell,
-                                        percentageFgramIdk))
+                                        percentageFgramIdk,
+                                        mdlTokenomy.prices24h.fgramidk))
+
 
                                 listMdlMarket.add(MdlMarket(
                                         scc_idk,
@@ -636,7 +699,8 @@ class RemoteRepository {
                                         mdlTokenomy.tickers.sccIdk.last,
                                         mdlTokenomy.tickers.sccIdk.buy,
                                         mdlTokenomy.tickers.sccIdk.sell,
-                                        percentageSccIdk))
+                                        percentageSccIdk,
+                                        mdlTokenomy.prices24h.sccidk))
 
 
                                 //add the  result to 'list'

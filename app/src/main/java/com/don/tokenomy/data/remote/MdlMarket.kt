@@ -4,7 +4,7 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data  class MdlMarket(
+data class MdlMarket(
         var market: String?,
         var category: String?,
         var high: String?,
@@ -14,4 +14,5 @@ data  class MdlMarket(
         var lastPrice: String?,
         var buy: String?,
         var sell: String?,
-        var percentage: Float) : Parcelable
+        var percentage: Float,
+        var twoFour: String) : Parcelable

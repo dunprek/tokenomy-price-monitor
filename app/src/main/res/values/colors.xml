@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="MissingDefaultResource">
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingDefaultResource">
     <color name="colorPrimary">#0089EF</color>
     <color name="colorPrimaryDark">#1E70BB</color>
     <color name="colorAccent">#FF6024</color>
@@ -11,4 +10,11 @@
     <color name="colorGreyishBlueDark">#456286</color>
     <color name="colorGreyish">#E3E7EF</color>
     <color name="colorGreyishBlueLight">#617A9A</color>
+    <color name="colorPieOne">#77c9ff</color>
+    <color name="colorPieTwo">#c3e2f8</color>
+    <color name="colorPieThree">#0a5a92</color>
+    <color name="colorPieFour">#1f9ef4</color>
+    <color name="colorPieFive">#1e77b4</color>
+    <color name="colorGreen">#4CAF50</color>
+    <color name="colorRed">#B62A1D</color>
 </resources>

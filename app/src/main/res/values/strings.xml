@@ -12,58 +12,18 @@
     <string name="label_last_price">Last Price</string>
     <string name="label_24h_volume">24H Volume</string>
     <string name="label_change">% Change</string>
+    <string name="label_percentage">%1s % </string>
 
 
+    <string name="alert_title">Error</string>
+    <string name="alert_close">Close</string>
 
-
-    <string name="viewGithub">View on GitHub</string>
-    <string name="reportProblem">Problem Report</string>
-    <string name="viewWebsite">Developer Website</string>
-    <string name="actionSave">Save to Gallery</string>
-
-    <string name="animateX">Animate X</string>
-    <string name="animateY">Animate Y</string>
-    <string name="animateXY">Animate XY</string>
-
-    <string name="actionToggleValues">Toggle Values</string>
-    <string name="actionToggleYValues">Toggle Y-Values</string>
-    <string name="actionToggleXValues">Toggle X-Values</string>
-
-    <string name="actionToggleIcons">Toggle Icons</string>
-    <string name="actionToggleHighlight">Toggle Highlight</string>
-    <string name="actionTogglePinch">Toggle PinchZoom</string>
-    <string name="actionToggleAutoScale">Toggle Auto Scale</string>
-
-    <string name="actionToggleLineValues">Toggle Line Values</string>
-    <string name="actionToggleBarValues">Toggle Bar Values</string>
-    <string name="actionToggleBarBorders">Toggle Bar Borders</string>
-    <string name="actionToggleFilled">Toggle Filled</string>
-    <string name="actionToggleCircles">Toggle Circles</string>
-    <string name="actionToggleCandleShadow">Toggle Shadow Color</string>
-
-    <string name="actionToggleCubic">Toggle Cubic</string>
-    <string name="actionToggleStepped">Toggle Stepped</string>
-    <string name="actionToggleHorizontalCubic">Toggle Horizontal Cubic</string>
-
-    <string name="actionAddEntry">Add Entry</string>
-    <string name="actionFeedMultiple">Add Multiple</string>
-    <string name="actionRemoveEntry">Remove Entry</string>
-    <string name="actionAddDataSet">Add Data Set</string>
-    <string name="actionRemoveDataSet">Remove Data Set</string>
-    <string name="actionClearChart">Clear chart</string>
-
-    <string name="actionTogglePercent">Toggle Percent</string>
-    <string name="actionToggleMinAngles">Toggle Minimum Angles</string>
-    <string name="actionToggleHole">Toggle Hole</string>
-    <string name="actionToggleCurvedSlices">Toggle Curved Slices</string>
-    <string name="actionDrawCenterText">Draw Center Text</string>
-    <string name="actionToggleHighlightCircle">Toggle Highlight Circle</string>
-    <string name="actionToggleRotation">Toggle Rotation</string>
-    <string name="actionToggleSpin">Spin Animation</string>
-
-    <string name="dash">-</string>
-    <string name="scrollViewStart">START OF SCROLLVIEW</string>
-    <string name="scrollViewEnd">END OF SCROLLVIEW</string>
+    <string name="label_detail">Detail</string>
+    <string name="label_last_price_detail">LAST PRICE</string>
+    <string name="label_24h_change">24H CHANGE</string>
+    <string name="label_24h_high">24H HIGH</string>
+    <string name="label_24h_low">24H LOW</string>
+    <string name="label_24h_volume_detail">24H VOLUME</string>
 
 
 </resources>
