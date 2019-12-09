@@ -24,7 +24,8 @@ Consuming API from <a href ="https://exchange.tokenomy.com/api/summaries" target
 <ul>
   <li> Fetch data from the api and display it to UI</li>
   <li> Implement Search based on typed query</li> 
-  <li> Showing the detail of selected item</li> 
+  <li> Showing the detail of selected item</li>
+  <li> Store request on cache and stored for 2 hours</li> 
   <li> Using MPAndroidChart by PhilJay for the Pie Chart <a href ="https://github.com/PhilJay/MPAndroidChart">Link here</a></li>
 </ul>
 <p>
