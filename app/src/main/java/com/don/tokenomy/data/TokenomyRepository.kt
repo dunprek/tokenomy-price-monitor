@@ -13,6 +13,10 @@ import com.don.tokenomy.data.remote.RemoteRepository
  * Jakarta - Indonesia
  */
 class TokenomyRepository(private val remoteRepository: RemoteRepository) : TokenomyDataSource {
+
+    val errorResponse = MutableLiveData<String>()
+
+
     override fun getSummary(tokenomyService: TokenomyService, progress: LinearLayout): LiveData<List<MdlMarket>> {
         val summaryResult = MutableLiveData<List<MdlMarket>>()
         remoteRepository.getSummary(object : RemoteRepository.LoadSummaryCallback {
@@ -31,7 +35,6 @@ class TokenomyRepository(private val remoteRepository: RemoteRepository) : Token
     }
 
 
-    val errorResponse = MutableLiveData<String>()
 
     companion object {
         @Volatile

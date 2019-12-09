@@ -27,6 +27,7 @@ import com.github.mikephil.charting.highlight.Highlight
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener
 import com.github.mikephil.charting.utils.MPPointF
 import kotlinx.android.synthetic.main.activity_main.*
+import okhttp3.Cache
 import timber.log.Timber
 import java.util.*
 import javax.inject.Inject
@@ -60,6 +61,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, OnChartValueSele
 
         //setup adapter
         setupAdapter()
+
 
 
 
