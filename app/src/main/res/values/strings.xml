@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">MPAndroidChart Example</string>
+    <string name="app_name">Tokenomy Price Monitor</string>
 
     <string name="label_price_monitor">Price Monitor</string>
     <string name="label_top_5_volume">Top 5 Volume</string>
